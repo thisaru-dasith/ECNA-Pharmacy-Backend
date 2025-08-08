@@ -17,8 +17,11 @@ create table order_items
     quantity    int            not null,
     total_price decimal(10, 2) not null,
     constraint order_items__drug_id_fk
-        foreign key (drug_id) references drugs(drug_id),
+        foreign key (drug_id) references drugs(drug_id)
+            on delete cascade,
     constraint  order_items__order_id_fk
         foreign key (order_id) references orders(order_id)
+            on delete cascade
+
 );
 
