@@ -1,11 +1,15 @@
 package lk.thisaru.ecnapharmacybackend.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.UUID;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "purchase_items")
 public class PurchaseItem {
