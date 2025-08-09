@@ -1,10 +1,14 @@
 package lk.thisaru.ecnapharmacybackend.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "drugs")
 public class Drug {
@@ -19,5 +23,6 @@ public class Drug {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private DrugCategory category;
+
 
 }
