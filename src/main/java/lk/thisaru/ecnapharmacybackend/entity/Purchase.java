@@ -9,6 +9,8 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Setter
@@ -23,16 +25,14 @@ public class Purchase {
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id")
     private UUID id;
-    @Column(name = "quantity")
-    private Integer quantity;
-    @Column(name = "unit_price")
-    private BigDecimal unitPrice;
     @Column(name = "total_price")
     private BigDecimal totalPrice;
     @Column(name = "purchase_date", insertable = false, updatable = false)
     private LocalDateTime purchaseDate;
-    @Column(name = "expire_date")
-    private LocalDate expireDate;
+
+    @OneToMany(mappedBy = "purchase")
+    private List<PurchaseItem> purchaseItems = new ArrayList<>();
+
 
 
 

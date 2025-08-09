@@ -32,4 +32,7 @@ public class Drug {
 
     @OneToMany(mappedBy = "drug")
     private List<InventoryTransaction> transactions = new ArrayList<>();
+
+    @OneToMany(mappedBy = "drug")
+    private List<PurchaseItem> purchaseItems = new ArrayList<>();
 }
