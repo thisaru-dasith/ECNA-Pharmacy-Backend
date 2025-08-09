@@ -24,5 +24,6 @@ public class Drug {
     @JoinColumn(name = "category_id")
     private DrugCategory category;
 
-
+    @OneToMany(mappedBy = "drug")
+    private List<OrderItem> orderItems = new ArrayList<>();
 }
