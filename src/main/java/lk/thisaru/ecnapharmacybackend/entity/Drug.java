@@ -26,4 +26,10 @@ public class Drug {
 
     @OneToMany(mappedBy = "drug")
     private List<OrderItem> orderItems = new ArrayList<>();
+
+    @OneToOne(mappedBy = "drug")
+    private Inventory inventory;
+
+    @OneToMany(mappedBy = "drug")
+    private List<InventoryTransaction> transactions = new ArrayList<>();
 }
